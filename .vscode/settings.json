@@ -1,0 +1,4 @@
+{
+    "appService.deploySubpath": "",
+    "appService.defaultWebAppToDeploy": "/subscriptions/4a8f2706-543d-4ffd-873a-4331a4359032/resourceGroups/aludra-production/providers/Microsoft.Web/sites/aludra-chat"
+}
