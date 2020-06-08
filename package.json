@@ -18,7 +18,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "node-env-run server --exec nodemon | pino-colada",
+    "server": "node-env-run --port 8000 server --exec nodemon | pino-colada",
     "dev": "run-p server start"
   },
   "proxy": "http://localhost:3001",
