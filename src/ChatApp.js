@@ -37,7 +37,7 @@ class ChatApp extends Component {
     //   .catch(this.handleError);
 
 
-    fetch("http://ff08bebe21be.ngrok.io/api/chat/token", {
+    fetch("https://ff08bebe21be.ngrok.io/api/chat/token", {
       "method": "POST",
       "headers": {
         "content-type": "application/json",
