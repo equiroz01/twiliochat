@@ -1,3 +1,5 @@
+// ESTO VA PORQUE VA
+
 import React from 'react';
 import { Button } from '@progress/kendo-react-buttons';
 import { Input } from '@progress/kendo-react-inputs';
@@ -16,6 +18,22 @@ const Login = props => {
             style={{ width: '100%' }}
             value={props.username}
             onChange={props.handleUsernameChange}
+          />
+        </div>
+        <div className="mb-3">
+          <Input
+            type="hidden"
+            name="channel"
+            required={true}
+            value={props.channel}
+            onChange={(e) => this.change(e, 'channel')}
+          />
+          <Input
+            type="hidden"
+            name="information"
+            required={true}
+            value={props.information}
+            onChange={(e) => this.change(e, 'information')}
           />
         </div>
         <div>

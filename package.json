@@ -8,8 +8,10 @@
     "@progress/kendo-react-inputs": "^2.11.0",
     "@progress/kendo-react-intl": "^2.11.0",
     "@progress/kendo-theme-material": "^2.5.2",
+    "query-string": "^6.13.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "^2.1.8",
     "twilio-chat": "^3.4.0"
   },
@@ -18,7 +20,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "node-env-run server --exec nodemon | pino-colada",
+    "server": "node-env-run --port 8000 server --exec nodemon | pino-colada",
     "dev": "run-p server start"
   },
   "proxy": "http://localhost:3001",
