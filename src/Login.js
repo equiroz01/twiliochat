@@ -20,6 +20,22 @@ const Login = props => {
             onChange={props.handleUsernameChange}
           />
         </div>
+        <div className="mb-3">
+          <Input
+            type="hidden"
+            name="channel"
+            required={true}
+            value={props.channel}
+            onChange={(e) => this.change(e, 'channel')}
+          />
+          <Input
+            type="hidden"
+            name="information"
+            required={true}
+            value={props.information}
+            onChange={(e) => this.change(e, 'information')}
+          />
+        </div>
         <div>
           <Button type="submit" primary={true}>
             Sign in

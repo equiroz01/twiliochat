@@ -25,19 +25,11 @@ class ChatApp extends Component {
   }
 
   componentDidMount() {
-    // fetch('http://localhost:3000/api/chat/token', {
-    //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    //   method: 'POST',
-    //   body: `identity=${encodeURIComponent(this.props.username)}`
-    // })
-    //   .then(res => res.json())
-
-    //   .then(data => Chat.create(data.token))
-    //   .then(this.setupChatClient)
-    //   .catch(this.handleError);
 
 
-    fetch("https://ff08bebe21be.ngrok.io/api/chat/token", {
+    console.log("channel " + this.props.channel);
+    console.log("information " + this.props.information);
+    fetch("https://aludra-api-management.azure-api.net/orchestration/qa/chat/token", {
       "method": "POST",
       "headers": {
         "content-type": "application/json",
@@ -55,7 +47,6 @@ class ChatApp extends Component {
   }
 
   handleError(error) {
-    console.error(error);
     this.setState({
       error: 'Could not load chat.'
     });
@@ -64,11 +55,11 @@ class ChatApp extends Component {
   setupChatClient(client) {
     this.client = client;
     this.client
-      .getChannelByUniqueName('general2')
+      .getChannelByUniqueName(this.props.channel || 'general2')
       .then(channel => channel)
       .catch(error => {
         if (error.body.code === 50300) {
-          return this.client.createChannel({ uniqueName: 'general2' });
+          return this.client.createChannel({ uniqueName: this.props.channel || 'general2' });
         } else {
           this.handleError(error);
         }
@@ -127,7 +118,7 @@ class ChatApp extends Component {
         user={this.user}
         messages={this.state.messages}
         onMessageSend={this.sendMessage}
-        width={500}
+        width={400}
       />
     );
   }
