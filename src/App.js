@@ -24,9 +24,15 @@ class App extends Component {
 
   handleUsernameChange(event) {
     this.setState({ username: event.target.value });
-    const parsed = qs.parse(window.location.pathname.replace('/', ''));
+    console.log(window.location.href);
+    console.log(window.location.pathname);
+    const parsed = qs.parse(window.location.href.replace('/', ''));
+    console.log(parsed);
+
     const channel = parsed.channel;
     const information = parsed.information;
+    console.log(channel);
+    console.log(information);
     this.setState({ channel: channel });
     this.setState({ information: information });
   }
@@ -35,8 +41,6 @@ class App extends Component {
     let loginOrChat;
 
     //console.log(parsed);
-
-
 
     if (this.state.loggedIn) {
       loginOrChat = <ChatApp
